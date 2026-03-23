@@ -6,14 +6,12 @@ export function AboutSection() {
   const { ref, isVisible } = useScrollReveal();
   const technologies = [
     'React',
-    'Next.js',
-    'TypeScript',
     'JavaScript',
     'Tailwind CSS',
     'HTML/CSS',
     'Node.js',
     'REST APIs',
-    'MongoDB',
+    'Mysql',
     'Express.js',
   ];
 
@@ -34,7 +32,7 @@ export function AboutSection() {
                 About Me
               </p>
               <h2 className="text-4xl font-bold text-foreground mb-4">
-                Frontend Developer with Node.js Expertise
+                Frontend Developer with FrontEnd and Node.js Expertise
               </h2>
             </div>
 
@@ -72,7 +70,7 @@ export function AboutSection() {
               {[
                 { number: '50+', label: 'Projects Completed' },
                 { number: '30+', label: 'Happy Clients' },
-                { number: '5+', label: 'Years Experience' },
+                { number: '3+', label: 'Years Experience' },
                 { number: '100%', label: 'Client Satisfaction' },
               ].map((stat) => (
                 <div

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 export function HeroSection() {
-  const [portraitSrc, setPortraitSrc] = useState('/hero-portrait.jpg');
+  const [portraitSrc, setPortraitSrc] = useState('/hero-image.jpeg');
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);

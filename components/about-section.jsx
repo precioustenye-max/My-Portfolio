@@ -32,20 +32,18 @@ export function AboutSection() {
                 About Me
               </p>
               <h2 className="text-4xl font-bold text-foreground mb-4">
-                Frontend Developer with FrontEnd and Node.js Expertise
+                Frontend Developer with React and Node.js Expertise
               </h2>
             </div>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I'm a passionate developer specializing in building beautiful, responsive frontend
-              experiences with React and Next.js, complemented by solid backend skills in Node.js.
-              I focus on creating seamless user experiences with clean, maintainable code.
+              I'm a developer focused on building clean, responsive frontend experiences with
+              React, supported by backend skills in Node.js, Express, REST APIs, and MySQL.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              My expertise spans modern frontend frameworks, responsive design with Tailwind CSS,
-              and backend development with Node.js and Express. I'm dedicated to writing scalable
-              code and continuously expanding my technical knowledge.
+              I enjoy turning ideas into useful web products, from polished interfaces to the
+              backend routes and data structures that make them work reliably.
             </p>
 
             <div className="pt-4">
@@ -68,10 +66,10 @@ export function AboutSection() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { number: '50+', label: 'Projects Completed' },
-                { number: '30+', label: 'Happy Clients' },
-                { number: '3+', label: 'Years Experience' },
-                { number: '100%', label: 'Client Satisfaction' },
+                { number: '4+', label: 'Featured Builds' },
+                { number: '2', label: 'Core Stacks' },
+                { number: '100%', label: 'Responsive Focus' },
+                { number: 'Open', label: 'Remote Availability' },
               ].map((stat) => (
                 <div
                   key={stat.label}

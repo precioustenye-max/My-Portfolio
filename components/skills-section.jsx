@@ -1,11 +1,9 @@
 'use client';
 
 import {
-  Code2,
   Database,
   Palette,
   Zap,
-  Shield,
   GitBranch,
   Smartphone,
   Server,
@@ -18,22 +16,22 @@ export function SkillsSection() {
     {
       title: 'Frontend',
       icon: Palette,
-      skills: ['React', 'JavaScript', , 'Tailwind CSS', 'HTML/CSS'],
+      skills: ['React', 'JavaScript', 'Tailwind CSS', 'HTML/CSS'],
     },
     {
       title: 'Backend',
       icon: Server,
-      skills: ['Node.js', 'Express.js', 'REST APIs', 'Authentication', ],
+      skills: ['Node.js', 'Express.js', 'REST APIs', 'Authentication'],
     },
     {
       title: 'Databases',
       icon: Database,
-      skills: [ 'MySQL', 'Database Design'],
+      skills: ['MySQL', 'Database Design'],
     },
     {
       title: 'Tools & Version Control',
       icon: GitBranch,
-      skills: ['Git', 'npm/pnpm', 'VS Code', 'GitHub', 'Linux Terminal',],
+      skills: ['Git', 'npm/pnpm', 'VS Code', 'GitHub', 'Linux Terminal'],
     },
     {
       title: 'Responsive Design',

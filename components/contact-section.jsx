@@ -76,13 +76,13 @@ export function ContactSection() {
               {
                 icon: Phone,
                 label: 'Phone',
-                value: '654471272',
-                href: '237654471272',
+                value: '+237 654 471 272',
+                href: 'tel:+237654471272',
               },
               {
                 icon: MapPin,
                 label: 'Location',
-                value: 'Open to remote opportunities',
+                value: 'Cameroon · Open to remote opportunities',
                 href: '#',
               },
             ].map((item) => {
@@ -115,12 +115,12 @@ export function ContactSection() {
                 {[
                   {
                     icon: Github,
-                    href: 'https://github.com',
+                    href: 'https://github.com/precioustenye-max',
                     label: 'GitHub',
                   },
                   {
                     icon: Linkedin,
-                    href: 'https://linkedin.com',
+                    href: 'https://www.linkedin.com/in/precious-tenye-203428358/?skipRedirect=true',
                     label: 'LinkedIn',
                   },
                   {

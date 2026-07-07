@@ -1,28 +1,42 @@
 'use client';
 
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 export function ProjectsSection() {
   const { ref, isVisible } = useScrollReveal();
   const projects = [
     {
+      title: 'TrendAI',
+      description:
+        'An AI-powered trend discovery tool that helps users explore emerging topics, generate content ideas, and track what is gaining attention online.',
+      technologies: ['React', 'Tailwind CSS', 'Node.js', 'AI Integration', 'REST APIs'],
+      highlights: ['AI-assisted insights', 'Topic discovery flow', 'Responsive dashboard UI'],
+      status: 'Case study in progress',
+    },
+    {
       title: 'MedConnect',
       description:
-        'A medicine-focused website for browsing products, viewing details, and making informed choices with a clean, responsive UI.',
+        'A medicine-focused platform for browsing products, viewing details, and making informed choices through a clean responsive interface.',
       technologies: ['React', 'Tailwind CSS', 'Vite', 'Node.js', 'MySQL', 'REST APIs'],
+      highlights: ['Product browsing', 'Medicine detail pages', 'Backend-ready structure'],
+      status: 'Private client project',
     },
     {
       title: 'Community Resolve Platform',
       description:
         'A community platform to report local issues and coordinate clean-up efforts, helping keep neighborhoods safer and cleaner.',
-      technologies: ['React', 'Node.js', 'Mysql', 'REST APIs'],
+      technologies: ['React', 'Node.js', 'MySQL', 'REST APIs'],
+      highlights: ['Issue reporting', 'Community coordination', 'API-driven workflow'],
+      status: 'Private build',
     },
     {
       title: 'ChasinDecor E-Commerce Website',
       description:
         'An online furniture store experience with product listings, search, cart flow, and a modern, mobile-first design.',
       technologies: ['React', 'Tailwind CSS'],
+      highlights: ['Product catalog', 'Cart flow', 'Mobile-first shopping UI'],
+      status: 'Demo being prepared',
     },
   ];
 
@@ -41,12 +55,12 @@ export function ProjectsSection() {
           </p>
           <h2 className="text-4xl font-bold text-foreground">Featured Projects</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-2xl">
-            A few real projects I’ve built, showing my focus on clean UI, practical features, and
-            end-to-end implementation.
+            Real builds that show how I handle user interfaces, backend workflows, and practical
+            product features from idea to implementation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -64,6 +78,18 @@ export function ProjectsSection() {
                   <p className="text-foreground/70 leading-relaxed">{project.description}</p>
                 </div>
 
+                <div>
+                  <p className="text-sm font-semibold text-foreground mb-3">What I built</p>
+                  <ul className="space-y-2">
+                    {project.highlights.map((highlight) => (
+                      <li key={highlight} className="flex items-center gap-3 text-sm text-foreground/75">
+                        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
@@ -78,13 +104,9 @@ export function ProjectsSection() {
 
                 {/* Links */}
                 <div className="flex gap-4 pt-4 mt-auto">
-                  <span className="flex items-center gap-2 px-4 py-2 bg-muted/50 border border-border rounded-lg font-medium text-sm text-muted-foreground cursor-default">
+                  <span className="flex items-center gap-2 px-4 py-2 bg-muted/50 border border-border rounded-lg font-medium text-sm text-muted-foreground">
                     <ExternalLink className="w-4 h-4" />
-                    Demo on request
-                  </span>
-                  <span className="flex items-center gap-2 px-4 py-2 bg-muted/50 border border-border rounded-lg font-medium text-sm text-muted-foreground cursor-default">
-                    <Github className="w-4 h-4" />
-                    Code on request
+                    {project.status}
                   </span>
                 </div>
               </div>

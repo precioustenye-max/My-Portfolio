@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 export function HeroSection() {
-  const [portraitSrc, setPortraitSrc] = useState('/hero-image.jpeg');
+  const [portraitSrc, setPortraitSrc] = useState('/hero-portrait.jpeg');
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -34,8 +34,8 @@ export function HeroSection() {
           </div>
 
           <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
-            I build beautiful, responsive web experiences with modern frontend technologies and
-            scalable backend solutions using Node.js. Let's create something amazing together.
+            I build React interfaces and Node.js APIs for practical products like e-commerce
+            stores, community tools, dashboards, and AI-powered web apps.
           </p>
 
           {/* CTA Buttons */}
@@ -58,7 +58,7 @@ export function HeroSection() {
           {/* Social Links */}
           <div className="flex gap-4 pt-4">
             <a
-              href="https://github.com"
+              href="https://github.com/precioustenye-max"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors"
@@ -67,7 +67,7 @@ export function HeroSection() {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/precious-tenye-203428358/?skipRedirect=true"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-muted/50 hover:bg-muted text-foreground transition-colors"
@@ -95,7 +95,7 @@ export function HeroSection() {
             <div className="absolute inset-0 rounded-2xl overflow-hidden flex items-center justify-center bg-muted/30">
               <img
                 src={portraitSrc}
-                onError={() => setPortraitSrc('public/hero-image.jpeg')}
+                onError={() => setPortraitSrc('/hero-image.jpeg')}
                 alt="Fonsah Precious portrait"
                 className="w-full h-full object-cover object-[50%_18%]"
                 loading="eager"

@@ -8,9 +8,7 @@ export function Navbar() {
 
   const navItems = [
     { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
     { label: 'Services', href: '#services' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -25,16 +23,16 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 backdrop-blur-md bg-background/80 border-b border-border">
+      <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+            {/* <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
               <span className="text-accent-foreground font-bold text-lg">F</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-foreground font-bold text-lg">Fonsah Precious</h1>
+            </div> */}
+            <div className=" sm:block">
+              <h1 className="font-mono text-sm font-bold text-foreground">Fonsah Precious</h1>
               <p className="text-muted-foreground text-xs">Frontend & Node.js Developer</p>
             </div>
           </div>
@@ -49,7 +47,7 @@ export function Navbar() {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-foreground hover:text-accent transition-colors font-medium text-sm"
+                className="font-mono text-xs text-foreground hover:text-accent transition-colors"
               >
                 {item.label}
               </a>

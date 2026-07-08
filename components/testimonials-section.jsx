@@ -26,33 +26,33 @@ export function TestimonialsSection() {
   return (
     <section 
       ref={ref}
-      className={`py-24 px-4 sm:px-6 lg:px-8 bg-muted/20 transition-all duration-700 ${
+      className={`py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-muted/20 transition-all duration-700 ${
         isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
       }`}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-10 sm:mb-16">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase text-accent">
             Delivery Style
           </p>
-          <h2 className="text-4xl font-bold text-foreground">How I Approach Projects</h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl">
+          <h2 className="font-mono text-lg sm:text-xl font-bold text-foreground">How I Approach Projects</h2>
+          <p className="mt-3 max-w-2xl text-sm sm:text-[15px] leading-6 sm:leading-7 text-muted-foreground">
             Clear execution, practical features, and code that is built to keep moving after launch.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {deliveryHighlights.map((item, index) => (
             <div
               key={index}
-              className="p-8 rounded-xl bg-card border border-border/50 hover:border-accent/50 hover:bg-card/80 transition-all duration-300 flex flex-col gap-4"
+              className="p-5 sm:p-6 rounded-xl bg-card border border-border/50 hover:border-accent/50 hover:bg-card/80 transition-all duration-300 flex flex-col gap-4"
             >
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10">
-                <CheckCircle2 className="w-6 h-6 text-accent" />
+              <div className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-accent/10">
+                <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
-              <p className="text-foreground/80 leading-relaxed flex-grow">{item.content}</p>
+              <h3 className="font-mono text-base font-bold text-foreground">{item.title}</h3>
+              <p className="text-sm leading-6 text-foreground/80 flex-grow">{item.content}</p>
             </div>
           ))}
         </div>

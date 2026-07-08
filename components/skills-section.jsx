@@ -49,17 +49,17 @@ export function SkillsSection() {
     <section 
       ref={ref}
       id="skills" 
-      className={`py-24 px-4 sm:px-6 lg:px-8 bg-muted/20 transition-all duration-700 ${
+      className={`py-16 px-4 sm:px-6 lg:px-8 bg-muted/20 transition-all duration-700 ${
         isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
       }`}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="mb-16">
-          <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase text-accent">
             Expertise
           </p>
-          <h2 className="text-4xl font-bold text-foreground">Skills & Technologies</h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl">
+          <h2 className="font-mono text-xl font-bold text-foreground">Skills & Technologies</h2>
+          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-muted-foreground">
             A comprehensive set of technical skills developed through diverse projects and
             continuous learning.
           </p>
@@ -71,7 +71,7 @@ export function SkillsSection() {
             return (
               <div
                 key={category.title}
-                className="group p-8 rounded-xl bg-card border border-border/50 hover:border-accent/50 hover:bg-card/80 transition-all duration-300"
+                className="group p-6 rounded-xl bg-card border border-border/50 hover:border-accent/50 hover:bg-card/80 transition-all duration-300"
               >
                 {/* Icon */}
                 <div className="mb-6 inline-flex p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
@@ -79,7 +79,7 @@ export function SkillsSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                <h3 className="mb-4 font-mono text-base font-bold text-foreground group-hover:text-accent transition-colors">
                   {category.title}
                 </h3>
 
@@ -88,7 +88,7 @@ export function SkillsSection() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 bg-muted/50 border border-border/50 rounded-lg text-foreground/80 text-sm font-medium group-hover:border-accent/30 group-hover:text-accent/90 transition-colors"
+                      className="px-3 py-1.5 bg-muted/50 border border-border/50 rounded-lg font-mono text-foreground/80 text-xs font-medium group-hover:border-accent/30 group-hover:text-accent/90 transition-colors"
                     >
                       {skill}
                     </span>

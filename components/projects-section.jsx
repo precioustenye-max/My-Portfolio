@@ -4,8 +4,16 @@ import { ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { projects } from '@/lib/projects';
 
-export function ProjectsSection({ onProjectSelect }) {
+export function ProjectsSection({
+  onProjectSelect,
+  limit,
+  onViewAll,
+  heading = 'Featured Projects',
+  description = 'Real builds that show how I handle user interfaces, backend workflows, and practical product features from idea to implementation.',
+}) {
   const { ref, isVisible } = useScrollReveal();
+  const visibleProjects = typeof limit === 'number' ? projects.slice(0, limit) : projects;
+  const hasMoreProjects = visibleProjects.length < projects.length;
 
   return (
     <section 
@@ -20,17 +28,16 @@ export function ProjectsSection({ onProjectSelect }) {
           <p className="mb-2 font-mono text-xs font-semibold uppercase text-accent">
             My Work
           </p>
-          <h2 className="font-mono text-lg sm:text-xl font-bold text-foreground">Featured Projects</h2>
+          <h2 className="font-mono text-lg sm:text-xl font-bold text-foreground">{heading}</h2>
           <p className="mt-3 max-w-2xl text-sm sm:text-[15px] leading-6 sm:leading-7 text-muted-foreground">
-            Real builds that show how I handle user interfaces, backend workflows, and practical
-            product features from idea to implementation.
+            {description}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project) => (
             <a
-              key={index}
+              key={project.slug}
               href={`/projects/${project.slug}`}
               onClick={(event) => {
                 if (!onProjectSelect) return;
@@ -72,6 +79,23 @@ export function ProjectsSection({ onProjectSelect }) {
             </a>
           ))}
         </div>
+
+        {hasMoreProjects && (
+          <div className="mt-10 flex justify-center">
+            <a
+              href="/projects"
+              onClick={(event) => {
+                if (!onViewAll) return;
+                event.preventDefault();
+                onViewAll();
+              }}
+              className="inline-flex items-center gap-2 rounded-md border border-border px-5 sm:px-6 py-3 font-mono text-xs font-semibold uppercase text-foreground transition-colors hover:bg-muted/50"
+            >
+              See More Projects
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

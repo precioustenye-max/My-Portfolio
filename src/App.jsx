@@ -7,6 +7,7 @@ import { TestimonialsSection } from '@/components/testimonials-section'
 import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
 import { ProjectDetail } from '@/components/project-detail'
+import { ProjectsPage } from '@/components/projects-page'
 import { getProjectBySlug } from '@/lib/projects'
 
 function getCurrentProjectSlug() {
@@ -16,12 +17,21 @@ function getCurrentProjectSlug() {
   return match?.[1] ?? null
 }
 
+function isProjectsPage() {
+  if (typeof window === 'undefined') return false
+  return /^\/projects\/?$/.test(window.location.pathname)
+}
+
 export default function App() {
   const [projectSlug, setProjectSlug] = useState(getCurrentProjectSlug)
+  const [showAllProjects, setShowAllProjects] = useState(isProjectsPage)
   const selectedProject = projectSlug ? getProjectBySlug(projectSlug) : null
 
   useEffect(() => {
-    const handlePopState = () => setProjectSlug(getCurrentProjectSlug())
+    const handlePopState = () => {
+      setProjectSlug(getCurrentProjectSlug())
+      setShowAllProjects(isProjectsPage())
+    }
 
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
@@ -31,12 +41,21 @@ export default function App() {
     window.history.pushState({}, '', `/projects/${slug}`)
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setProjectSlug(slug)
+    setShowAllProjects(false)
+  }
+
+  const openAllProjects = () => {
+    window.history.pushState({}, '', '/projects')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setProjectSlug(null)
+    setShowAllProjects(true)
   }
 
   const goHome = () => {
     window.history.pushState({}, '', '/')
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setProjectSlug(null)
+    setShowAllProjects(false)
   }
 
   if (selectedProject) {
@@ -48,12 +67,21 @@ export default function App() {
     )
   }
 
+  if (showAllProjects) {
+    return (
+      <>
+        <ProjectsPage onBack={goHome} onProjectSelect={openProject} />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <Navbar />
       <main>
         <HeroSection />
-        <ProjectsSection onProjectSelect={openProject} />
+        <ProjectsSection limit={2} onProjectSelect={openProject} onViewAll={openAllProjects} />
         <ServicesSection />
         <TestimonialsSection />
         <ContactSection />

@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, X } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ export function Footer() {
       href: 'https://www.linkedin.com/in/precious-tenye-203428358/?skipRedirect=true',
       label: 'LinkedIn',
     },
-    { icon: Twitter, href: 'https://twitter.com', label: 'X' },
+    { icon: X, href: 'https://x.com', label: 'X' },
     { icon: Mail, href: 'mailto:precioustenye41@gmail.com', label: 'Email' },
   ];
 
@@ -26,8 +26,8 @@ export function Footer() {
               <a
                 key={social.label}
                 href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={social.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={social.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 className="text-foreground hover:text-muted-foreground transition-colors"
                 aria-label={social.label}
               >

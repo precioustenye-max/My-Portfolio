@@ -33,7 +33,7 @@ export function Navbar() {
             </div> */}
             <div className=" sm:block">
               <h1 className="font-mono text-sm font-bold text-foreground">Fonsah Precious</h1>
-              <p className="text-muted-foreground text-xs">Frontend & Node.js Developer</p>
+              <p className="text-muted-foreground text-xs">Fullstack Developer</p>
             </div>
           </div>
 

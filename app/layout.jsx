@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -8,7 +7,6 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata = {
   title: 'Fonsah Precious N - Frontend Developer & Node.js Engineer',
   description: 'Professional portfolio of Fonsah Precious N. Frontend developer specializing in React, Next.js, and responsive design with Node.js backend expertise.',
-  generator: 'v0.app',
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -38,7 +36,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark">
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
       </body>
     </html>
   )

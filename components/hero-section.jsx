@@ -5,7 +5,7 @@ import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 export function HeroSection() {
   const [portraitSrc, setPortraitSrc] = useState('/hero-portrait.jpeg');
-  const projectSnapshots = ['TrendAI', 'MedConnect', 'Community Resolve', 'ChasinDecor'];
+  const projectSnapshots = ['TrendAI', 'ForgeAi', 'Resume Generator', ];
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
